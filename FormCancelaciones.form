@@ -1,0 +1,72 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package NEGOCIO;
+import java.util.ArrayList;
+import java.util.Date;
+
+/**
+ *
+ * @author luisa
+ */
+public class Empresa {
+private ArrayList<Bus> myBuses;
+private ArrayList<Tiquete> myTiquetes;
+private int numeroRuta=0;
+private ArrayList<Persona> myPersonas;
+private ArrayList<Ruta> myRutas;
+private ArrayList<Salida> mySalidas;
+
+
+//REVISAR TODA LA ESTRUCTURA BAJO LAS BUENAS PRACTICAS EN DECLARACION:CLASE  HASTA ATRIBUTO
+    public Empresa() {
+        //AGREGAR LOS METIODOS PRIVATE DE GENERACION DE OBJETOS BASE
+
+    myRutas.add(new Ruta("Cucuta","Bucaramanga",numeroRuta++,80000));
+    myRutas.add(new Ruta("Cucuta","Bogota",numeroRuta++,160000));
+    myRutas.add(new Ruta("Cucuta","Medellin",numeroRuta++,180000));
+    myRutas.add(new Ruta("Cucuta","Cartagena",numeroRuta++,220000));
+    
+    myBuses.add(new Bus("NORMAL","KAA-101"));
+    myBuses.add(new Bus("EJECUTIVO","KBB-202"));
+    myBuses.add(new Bus("NORMAL","KCC-303"));
+    myBuses.add(new Bus("EJECUTIVO","KDD-404"));
+    myBuses.add(new Bus("NORMAL","KEE-505"));
+    myBuses.getLast().setEstado("MANTENIMIENTO");
+    myBuses.add(new Bus("NORMAL","KFF-606"));
+
+    
+    }
+
+    
+    
+    public String Crearbus(String tipo,String placa) {
+        for (Bus b:myBuses) {
+            if (b.getPlaca().equalsIgnoreCase(placa)) {
+                return "PLACA YA EXISTE EN OTRO BUS";
+            }
+        }
+        this.myBuses.add(new Bus(tipo,placa));
+        return "BUS CREADO CORRECTAMENTE";
+    }
+
+    public String Crearpersona(String cedula, String nombre){
+        for (Persona p:myPersonas) {
+            if (p.getcedula().equalsIgnoreCase(cedula)) {
+                return "CEDULA YA EXISTE EN OTRA PERSONA";
+            }
+        }
+    this.myPersonas.add(new Persona(cedula,nombre));
+    return "PERSONA CREADA CORRECTAMENTE";
+    
+    }
+    public String crearruta(String origen,String destino){
+        for (Ruta r:myRutas) {
+            if (r.getorigen().equalsIgnoreCase(origen)) {
+                return "CEDULA YA EXISTE EN OTRA PERSONA";
+            }
+        }
+        return null;
+    }
+    }

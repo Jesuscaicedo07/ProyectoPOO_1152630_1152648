@@ -1,0 +1,47 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package NEGOCIO;
+
+/**
+ *
+ * @author luisa
+ */
+public class Tiquete {
+private Bus myBus;
+private Asiento myAsiento;
+private String estado;
+
+    public Tiquete(Bus bus, Asiento asiento) {
+        this.myBus = bus;
+        this.myAsiento = asiento;
+        this.estado = "PROGRAMADO";
+    }
+
+    public Bus getBus() {
+        return myBus;
+    }
+
+    public Asiento getAsiento() {
+        return myAsiento;
+    }
+
+    public void setBus(Bus bus) {
+        this.myBus = bus;
+    }
+
+    public void setAsiento(Asiento asiento) {
+        this.myAsiento = asiento;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+        
+}

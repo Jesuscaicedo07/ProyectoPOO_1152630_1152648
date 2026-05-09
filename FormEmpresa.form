@@ -1,0 +1,33 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package NEGOCIO;
+
+/**
+ *
+ * @author luisa
+ */
+public class Ruta {
+private String codigo;
+private String origen;
+private String destino;
+private int tarifaBase;
+
+
+    public Ruta(String origen, String destino,int numeroruta,int tarifa) {
+        this.origen = origen;
+        this.destino = destino;
+        this.codigo = "R"+numeroruta;
+        this.tarifaBase = tarifa;
+    }
+
+    public String getorigen() {
+        return origen;
+    }
+
+    public String getdestino() {
+        return destino;
+    }
+    
+}
